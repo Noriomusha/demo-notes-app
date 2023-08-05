@@ -3,8 +3,6 @@ import * as uuid from "uuid";
 import handler from "@notes/core/handler";
 import dynamoDb from "@notes/core/dynamodb";
 
-const dynamoDb = new AWS.DynamoDB.DocumentClient();
-
 export const main = handler(async (event) => {
     const data = JSON.parse(event.body);
     const params = {
@@ -25,19 +23,3 @@ export const main = handler(async (event) => {
 }) 
 
     
-/*
-    try { 
-        await dynamoDb.put(params).promise();
-
-        return {
-            statusCode: 200,
-            body: JSON.stringify(params.Item),
-        };
-    } catch (e) {
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: e.message }),
-        };
-    }
-}
-*/

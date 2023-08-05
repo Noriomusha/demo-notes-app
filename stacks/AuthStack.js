@@ -13,7 +13,7 @@ export function AuthStack({ stack, app }) {
   });
 
   auth.attachPermissionsForAuthUsers(stack, [
-    //Allow access to the API
+    // Allow access to the API
     api,
     // Policy granting access to a specific folder in the bucket
     new iam.PolicyStatement({
@@ -33,7 +33,7 @@ export function AuthStack({ stack, app }) {
     UserPoolClientId: auth.userPoolClientId,
   });
 
-  // Return the auth Resource
+  // Return the auth resource
   return {
     auth,
   };
